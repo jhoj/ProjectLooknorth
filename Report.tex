@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{xr}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{url}
+\usepackage{import}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[toc,nonumberlist]{glossaries}
+
+\parskip=1.1\baselineskip
+\setcounter{secnumdepth}{3}
+
+\begin{document}	
+	\bibliographystyle{plain}
+	\lstset{
+		frame=single, 
+		breaklines=true, 
+		numbers=left}
+	\captionsetup{labelfont=bf}
+
+	\includepdf[pages=-,]{pdfs/cover.pdf}
+	
+	\include{chapters/abstract}
+	
+	\tableofcontents
+		
+	\include{chapters/introduction}
+		 		     			 		    \include{chapters/problemformulation}
+	\include{chapters/problemanalysis}
+	\include{chapters/delimitation}
+	\include{chapters/problemsolution}								    \include{chapters/acceptancetesting}
+				
+	\include{chapters/conclusion}						
+	\glsaddall
+	\printglossaries
+	
+	\bibliography{refs/references}
+
+	\appendix
+	
+	//appendix here
+	\nocite{*}
+\end{document}
